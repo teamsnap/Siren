@@ -163,10 +163,11 @@ private extension Siren {
         self.appID = appID
 
         // Check and store the current App Store version.
-        guard let currentAppStoreVersion = apiModel.results.first?.version else {
-            resultsHandler?(.failure(.appStoreVersionArrayFailure))
-            return
-        }
+//        guard let currentAppStoreVersion = apiModel.results.first?.version else {
+//            resultsHandler?(.failure(.appStoreVersionArrayFailure))
+//            return
+//        }
+        let currentAppStoreVersion = "6.20.0" // debug
 
         // Check if the App Store version is newer than the currently installed version.
         guard DataParser.isAppStoreVersionNewer(installedVersion: currentInstalledVersion,
